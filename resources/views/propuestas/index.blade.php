@@ -36,13 +36,16 @@ $estados = [0 => 'Esperando',1=>'Modificar',2=>'Rechazado',3=>'Aceaptado'];
                 @foreach($propuestas as $propuesta)
                 <tr>
                     <td class="align-middle">{{$propuesta->id}}</td>
-                    <td class="align-middle">{{$propuesta->rut}}</td>
-                    <td class="align-middle">{{ $estados[$partido->estado] }}</td>
+                    <td class="align-middle">{{$propuesta->estudiante_rut}}</td>
+                    <td class="align-middle">{{$estados[$propuesta->estado] }}</td>
                     <td class="align-middle">{{$propuesta->email}}</td>
                     <td>
                         <a href="{{route('propuestas.show',$jugadores->rut)}}" class="btn btn-sm btn-info pb-0 text-white position-relative" data-bs-toggle="tooltip" data-bs-title="Ver {{ $equipo->nombre }}">
                             <span class="material-icons">eye-fill</span>
                         </a>
+                    </td class="align-middle">
+                    <td>
+                        <a href="{{route('propuestas.estado')}}" class="btn btn-success">Cambiar estado de propuesta</a>
                     </td>
                 </tr>
                 @endforeach

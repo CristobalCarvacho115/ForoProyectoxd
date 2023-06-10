@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Propuesta;
 use App\Models\Estudiante;
+// use App\Models\Propuesta;
 use Carbon\Carbon;
 
 
@@ -49,5 +50,7 @@ class PropuestasController extends Controller
 
         $propuesta->save();
         return redirect()->route('propuestas.index');
+
+        // $propuesta->profesoresConPivot()->updateExistingPivot($)
     }
 }

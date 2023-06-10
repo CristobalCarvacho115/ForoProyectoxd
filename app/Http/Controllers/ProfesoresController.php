@@ -19,6 +19,11 @@ class ProfesoresController extends Controller
         return view('profesores.create');
     }
 
+    public function estado()
+    {
+        return view('propuestas.estado');
+    }
+
     public function store(Request $request, Profesor $profesor)
     {
         $profesor = new Profesor();

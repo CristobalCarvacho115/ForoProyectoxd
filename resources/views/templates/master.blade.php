@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-custom.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/colores.min.css') }}">
     @yield('hojas-estilo')
     <title>Home</title>
 </head>
@@ -13,20 +13,20 @@
 <body>
     <!-- barra usuario -->
     <div class="container-fluid">
-        <div class="row bg-dark text-white">
+        <div class="row bg-secondary text-white">
             <div class="col-8">
             </div>
             <div class="col-3 text-end d-none d-lg-block">
             </div>
             <div class="col-1 text-end d-none d-lg-block">
-                <a href="home.login" class="text-white">Cerrar </a>
+                <a href="login.html" class="text-white">Cerrar </a>
             </div>
         </div>
     </div>
 
     <!-- navbar -->
     <div class="container-fluid px-0">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,15 +36,6 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link @if(Route::current()->getName()=='home.index') active @endif" aria-current="page" href="{{ route('home.index') }}">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @if(Route::current()->getName()=='estudiantes.index') active @endif" href="{{ route('estudiantes.index') }}">Ver estudiantes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @if(Route::current()->getName()=='profesores.index') active @endif" href="{{ route('profesores.index') }}">Ver profesores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @if(Route::current()->getName()=='propuestas.index') active @endif" href="{{ route('propuestas.index') }}">Ver propuestas</a>
                         </li>
                         <li class="nav-item d-lg-none">
                             <a class="nav-link" href="home.login">Cerrar Sesión</a>
