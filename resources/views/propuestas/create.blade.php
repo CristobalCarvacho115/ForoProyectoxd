@@ -20,7 +20,7 @@
                 @csrf
                 {{-- rut --}}
                 <div class="mb-3">
-                    <label for="estudiante_rut" class="form-label">Ingrese rut que esté en el sistema</label>
+                    <label for="estudiante_rut" class="form-label">Ingrese un rut que esté en el sistema</label>
                     <select name="estudiante_rut" id="estudiante_rut" class="form-control">
                         <option value="">Ingrese su rut</option>
                         @foreach($estudiantes as $estudiante)
@@ -32,6 +32,11 @@
                     <label for="documento" class="form-label">Ingrese documento PDF con su propuesta</label>
                     <input type="file" id="documento" name="documento" class="form-control">
                 </div>
+                <div class="mb-3">
+                    <label for="fecha" class="form-label">Fecha de subida</label>
+                    <input type="date" id="fecha" name="fecha" class="form-control" readonly="readonly" value="{{$now->format('Y-m-d')}}">
+                </div>
+
                 {{-- botones --}}
                 <div class="mb-3 d-grid gap-2 d-lg-block">
                     <button class="btn btn-warning" type="reset">Cancelar</button>

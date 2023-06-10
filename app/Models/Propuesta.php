@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
+
 class Propuesta extends Model
 {
     use HasFactory;
 
     protected $table = 'propuestas';
+    protected $primaryKey='id';
     public $timestamps = false;
 
     public function estudiantes():BelongsToMany{

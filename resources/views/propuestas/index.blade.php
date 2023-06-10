@@ -1,3 +1,6 @@
+@php
+$estados = [0 => 'Esperando',1=>'Modificar',2=>'Rechazado',3=>'Aceaptado'];
+@endphp
 @extends('templates.master')
 
 @section('hojas-estilo')
@@ -34,7 +37,7 @@
                 <tr>
                     <td class="align-middle">{{$propuesta->id}}</td>
                     <td class="align-middle">{{$propuesta->rut}}</td>
-                    <td class="align-middle">{{$propuesta->Estado}}</td>
+                    <td class="align-middle">{{ $estados[$partido->estado] }}</td>
                     <td class="align-middle">{{$propuesta->email}}</td>
                     <td>
                         <a href="{{route('propuestas.show',$jugadores->rut)}}" class="btn btn-sm btn-info pb-0 text-white position-relative" data-bs-toggle="tooltip" data-bs-title="Ver {{ $equipo->nombre }}">
