@@ -38,43 +38,15 @@
                             <a class="nav-link @if(Route::current()->getName()=='home.index') active @endif" aria-current="page" href="{{ route('home.index') }}">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @if(Route::current()->getName()=='estudiantes.index') active @endif" href="{{ route('estudiantes.index') }}">Estudiantes</a>
+                            <a class="nav-link @if(Route::current()->getName()=='estudiantes.index') active @endif" href="{{ route('estudiantes.index') }}">Ver estudiantes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Estadios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Estadísticas</a>
-                        </li>
-                        <li class="nav-item">
-                            {{-- <a class="nav-link @if(Route::current()->getName()=='jugadores.index') active @endif" href="{{ route('jugadores.index') }}">Jugadores</a> --}}
-                        </li>
-                        <li class="nav-item">
-                            {{-- <a class="nav-link @if(Route::current()->getName()=='partidos.index') active @endif" href="{{route('partidos.index')}}">Partidos</a> --}}
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Configuración
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark bg-primary">
-                                <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
-                                <li><a class="dropdown-item" href="#">Usuarios</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="https://www.usm.cl">UTFSM</a></li>
-                            </ul>
+                            <a class="nav-link @if(Route::current()->getName()=='profesores.index') active @endif" href="{{ route('profesores.index') }}">Ver profesores</a>
                         </li>
                         <li class="nav-item d-lg-none">
-                            {{-- <a class="nav-link" href="login.html">Cerrar Sesión</a> --}}
+                            <a class="nav-link" href="home.login">Cerrar Sesión</a>
                         </li>
-
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                        <button class="btn btn-outline-light" type="submit">Buscar</button>
-                    </form>
                 </div>
             </div>
         </nav>

@@ -4,25 +4,20 @@
 {{-- titulo --}}
 <div class="row mt-2">
     <div class="col-8">
-        <h3>Agregar estudiante</h3>
+        <h3>Agregar profesor</h3>
     </div>
     <div class="col-4 d-flex align-items-center justify-content-end">
-        <a href="{{route('estudiantes.index')}}" class="btn btn-warning">Cancelar</a>
+        <a href="{{route('profesores.index')}}" class="btn btn-warning">Cancelar</a>
     </div>
 </div>
 
 {{-- formulario --}}
 <div class="col">
     <div class="card">
-        <div class="card-header bg-dark text-white">Ingrese un nuevo estudiante</div>
+        <div class="card-header bg-dark text-white">Ingrese un nuevo profesor</div>
         <div class="card-body">
-            <form method="POST" action="{{route('estudiantes.store')}}">
+            <form method="POST" action="{{route('profesores.store')}}">
                 @csrf
-                {{-- rut --}}
-                <div class="mb-3">
-                    <label for="rut" class="form-label">RUT</label>
-                    <input type="text" id="rut" name="rut" class="form-control">
-                </div>
                 {{-- nombre --}}
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
@@ -41,7 +36,7 @@
                 {{-- botones --}}
                 <div class="mb-3 d-grid gap-2 d-lg-block">
                     <button class="btn btn-warning" type="reset">Cancelar</button>
-                    <button class="btn btn-success" type="submit">Agregar estudiante</button>
+                    <button class="btn btn-success" type="submit">Agregar profesor</button>
                 </div>
             </form>
         </div>

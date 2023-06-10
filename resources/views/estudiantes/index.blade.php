@@ -5,19 +5,24 @@
 @endsection
 
 @section('contenido-principal')
-<div class="row">
-    <div class="col">
+{{-- titulo --}}
+<div class="row mt-2">
+    <div class="col-8">
         <h3>Estudiantes</h3>
+        <p>Lista de todos los estudiantes</p>
+    </div>
+    <div class="col-4 d-flex align-items-center justify-content-end">
+        <a href="{{route('estudiantes.create')}}" class="btn btn-success">Añadir estudiante</a>
     </div>
 </div>
 
+{{-- tabla --}}
 <div class="row">
-    <!-- tabla -->
-    <div class="col-12 col-lg-8 order-last order-lg-first">
+    <div class="col">
         <table class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
-                    <th>Rut</th>
+                    <th>RUT</th>
                     <th>Apellido</th>
                     <th>Nombre</th>
                     <th>Email</th>
@@ -26,65 +31,14 @@
             <tbody>
                 @foreach($estudiantes as $estudiante)
                 <tr>
-                    <td class="align-middle">{{ $equipo->nombre }}</td>
-                    <td class="align-middle">{{ $equipo->entrenador }}</td>
-                    <td>{{ count($equipo->jugadores) }}</td>
-                    <td>
-                        <div class="row">
-                            {{-- Borrar --}}
-                            <div class="col text-end">
-                                <form method="POST" action="{{route('equipos.destroy',$equipo->id)}}">
-                                    @method('delete')
-                                    @csrf
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <span class="material-icons">delete</span>
-                                    </button>
-                                </form>
-                            </div>
-                            {{-- Editar --}}
-                            <div class="col text-center">
-                                <a href="{{route('equipos.edit',$equipo->id)}}" class="btn btn-sm btn-warning pb-0 text-white" data-bs-toggle="tooltip" data-bs-title="Editar {{ $equipo->nombre }}">
-                                    <span class="material-icons">edit</span>
-                                </a>
-                            </div>
-                            {{-- Ver detalle --}}
-                            <div class="col">
-                                <a href="{{route('equipos.show',$equipo->id)}}" class="btn btn-sm btn-info pb-0 text-white position-relative" data-bs-toggle="tooltip" data-bs-title="Ver {{ $equipo->nombre }}">
-                                    <span class="material-icons">group</span>
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
-                                        {{ count($equipo->jugadores) }}
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </td>
+                    <td class="align-middle">{{$estudiante->rut}}</td>
+                    <td class="align-middle">{{$estudiante->apellido}}</td>
+                    <td class="align-middle">{{$estudiante->nombre}}</td>
+                    <td class="align-middle">{{$estudiante->email}}</td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-    </div>
-
-    <!-- form agregar equipo -->
-    <div class="col-12 col-lg-4 order-first order-lg-last">
-        <div class="card">
-            <div class="card-header bg-dark text-white">Agregar Equipo</div>
-            <div class="card-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" id="nombre" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="entrenador" class="form-label">Entrenador</label>
-                        <input type="text" id="entrenador" class="form-control">
-                    </div>
-                    <div class="mb-3 d-grid gap-2 d-lg-block">
-                        <button class="btn btn-warning">Cancelar</button>
-                        <button class="btn btn-success">Agregar Equipo</button>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
 </div>
 @endsection
