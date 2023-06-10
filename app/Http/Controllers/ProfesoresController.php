@@ -31,21 +31,6 @@ class ProfesoresController extends Controller
         return redirect()->route('profesores.index');
     }
 
-    // public function show(Partido $partido)
-    // {
-    //     //
-    // }
-
-    // public function edit(Partido $partido)
-    // {
-    //     $equipos = Equipo::orderBy('nombre')->get();
-
-    //     $equipoLocal = $partido->equiposConPivot->where('pivot.es_local',true)->first();
-    //     $equipoVisita = $partido->equiposConPivot->where('pivot.es_local',false)->first();
-
-    //     return view('partidos.edit',compact(['partido','equipos','equipoLocal','equipoVisita']));
-    // }
-
     public function update(Request $request, Profesor $profesor)
     {
         $profesor->email    = $request->email;

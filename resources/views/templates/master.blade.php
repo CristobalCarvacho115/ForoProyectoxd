@@ -19,7 +19,7 @@
             <div class="col-3 text-end d-none d-lg-block">
             </div>
             <div class="col-1 text-end d-none d-lg-block">
-                <a href="login.html" class="text-white">Cerrar </a>
+                <a href="home.login" class="text-white">Cerrar </a>
             </div>
         </div>
     </div>
@@ -42,6 +42,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @if(Route::current()->getName()=='profesores.index') active @endif" href="{{ route('profesores.index') }}">Ver profesores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @if(Route::current()->getName()=='propuestas.index') active @endif" href="{{ route('propuestas.index') }}">Ver propuestas</a>
                         </li>
                         <li class="nav-item d-lg-none">
                             <a class="nav-link" href="home.login">Cerrar Sesión</a>

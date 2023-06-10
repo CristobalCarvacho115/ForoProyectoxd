@@ -12,8 +12,8 @@ use App\Http\Controllers\PropuestasController;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/',[HomeController::class,'login'])->name('home.login');
-Route::get('/index',[HomeController::class,'index'])->name('home.index');
+
+Route::get('/',[HomeController::class,'index'])->name('home.index');
 
 Route::resource('/estudiantes',EstudiantesController::class)->parameter('estudiantes','estudiante');
 Route::resource('/profesores',ProfesoresController::class)->parameter('profesores','profesor');
